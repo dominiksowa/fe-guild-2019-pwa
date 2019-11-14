@@ -26,10 +26,8 @@ const openCreatePostModal = () => {
     }
 };
 
-
 const closeCreatePostModal = () => createPostArea.style.transform = 'translateY(100vh)';
 
 shareImageButton.addEventListener('click', openCreatePostModal);
 
 closeCreatePostModalButton.addEventListener('click', closeCreatePostModal);
-
