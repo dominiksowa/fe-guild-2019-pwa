@@ -69,3 +69,36 @@ window.addEventListener('load', () => {
     const manifestURL = URL.createObjectURL(blob);
     document.querySelector('#manifestPlaceholder').setAttribute('href', manifestURL);
 });
+
+window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    return false;
+});
+
+window.addEventListener('beforeinstallprompt', event => {
+    // Determine the user's choice - returned as a Promise
+    event.userChoice.then(result => {
+        console.log(result.outcome);
+
+        // Based on the user's choice, decide how to proceed
+        if(result.outcome == 'dismissed') {
+            // Send to analytics
+        } else {
+            // Send to analytics
+        }
+    });
+});
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', event => {
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
+    event.preventDefault();
+
+    console.log('beforeinstallprompt fired');
+
+    // Stash the event so it can be triggered later.
+    deferredPrompt = event;
+
+    return false;
+});
