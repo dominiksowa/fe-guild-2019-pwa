@@ -1,4 +1,4 @@
-const CACHE_STATIC_NAME = 'static_v2';
+const CACHE_STATIC_NAME = 'static_v1';
 const CACHE_DYNAMIC_NAME = 'dynamic_v1';
 const URLS_TO_PRECACHE = [
     //'/',
